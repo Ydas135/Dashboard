@@ -2,8 +2,8 @@ import { useState } from "react";
 import { initialTodos } from "../data/dataTodo";
 
 export const useTodo = () => {
-    const [todos, setTodos] = useState(initialTodos || []);
-
+    const [todos, setTodos] = useState(initialTodos);
+    
     const addTodo = (text) => {
         const newTodo = {
             id:Date.now(),
@@ -34,6 +34,7 @@ export const useTodo = () => {
         setTodos(prev => prev.filter(t => t.id !== id))
     }
 
+        console.log("TODOS:", todos);
     return{
         todos,
         addTodo,
@@ -41,4 +42,5 @@ export const useTodo = () => {
         togglePriority,
         deleteTodo
     }
+    
 }

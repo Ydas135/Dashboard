@@ -2,7 +2,9 @@ import { createBrowserRouter } from "react-router";
 import { Home } from "../app/home/home";
 import { DashboardLayout } from "../common/layouts/dashboardLayout";
 import { AboutMe } from "../app/about/aboutMe";
-import { Todo } from "../app/todo/todo";
+import { TodoLayout } from "../features/todo/pages/TodoLayout";
+import { TodoWelcome } from "../features/todo/pages/TodoWelcome";
+import { TodoListPage } from "../features/todo/pages/TodoListPage";
 
 export const router = createBrowserRouter([
   {
@@ -18,8 +20,27 @@ export const router = createBrowserRouter([
         Component:AboutMe,
       },
       {
-        path: "todo",
-        Component:Todo,
+        path: "todo-module",
+        Component:TodoLayout,
+        children:[
+          {
+            index: true,
+            Component:TodoWelcome
+          },
+          {
+            path: "todo",
+            Component:TodoListPage
+          },
+          {
+            path: "completed",
+            Component:TodoListPage
+          },
+          {
+            path: "priority",
+            Component:TodoListPage
+          }
+        ]
+
       }
     ]
   },

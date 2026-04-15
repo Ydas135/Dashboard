@@ -13,16 +13,16 @@ export default function Sidebar() {
               <Link to="/about">About Me</Link>
               
               <div className="flex flex-col gap-2">
-                <Link to="/todo" className="font-semibold text-orange-400">
+                <Link to="/todo-module" className="font-semibold text-orange-400">
                   Todo - Module
                 </Link>
-                <Link to="/todo" className="ml-4 text-sm">
+                <Link to="/todo-module/todo" className="ml-4 text-sm">
                   TODO
                 </Link>
-                <Link to="/todo?filter=completed" className="ml-4 text-sm">
+                <Link to="/todo-module/completed" className="ml-4 text-sm">
                   Completed
                 </Link>
-                <Link to="/todo?filter=priority" className="ml-4 text-sm">
+                <Link to="/todo-module/priority" className="ml-4 text-sm">
                   Priority
                 </Link>
               </div>
