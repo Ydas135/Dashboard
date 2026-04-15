@@ -1,12 +1,13 @@
 import { createBrowserRouter } from "react-router";
 import { Home } from "../app/home/home";
-import { dashboardLayout } from "../common/layouts/dashboardLayout";
-import { aboutMe } from "../app/about/aboutMe";
+import { DashboardLayout } from "../common/layouts/dashboardLayout";
+import { AboutMe } from "../app/about/aboutMe";
+import { Todo } from "../app/todo/todo";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: dashboardLayout,
+    Component: DashboardLayout,
     children: [
       {
         index: true,
@@ -14,7 +15,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "about",
-        Component:aboutMe
+        Component:AboutMe,
+      },
+      {
+        path: "todo",
+        Component:Todo,
       }
     ]
   },
