@@ -9,14 +9,16 @@ export const TodoPage = () => {
   const filter = searchParams.get("filter");
 
   const {
-    normalTodos,
-    priorityTodos,
-    completedTodos,
+    todos,
     addTodo,
     toggleComplete,
     togglePriority,
     deleteTodo
   } = useTodo();
+
+  const normalTodos = todos.filter(t => !t.completed && !t.priority);
+  const priorityTodos = todos.filter(t => t.priority && !t.completed);
+  const completedTodos = todos.filter(t => t.completed);
 
   const todosToShow = filter === "completed" ? completedTodos : filter === "priority" ? priorityTodos : normalTodos
   

@@ -34,15 +34,8 @@ export const useTodo = () => {
         setTodos(prev => prev.filter(t => t.id !== id))
     }
 
-    const normalTodos = todos.filter(t => !t.completed && !t.priority);
-    const priorityTodos = todos.filter(t => t.priority && !t.completed);
-    const completedTodos = todos.filter(t => t.completed);
-
     return{
         todos,
-        normalTodos,
-        priorityTodos,
-        completedTodos,
         addTodo,
         toggleComplete,
         togglePriority,
