@@ -1,12 +1,13 @@
-import { createBrowserRouter } from "react-router";
+import { createHashRouter } from "react-router";
 import { Home } from "../app/home/home";
 import { DashboardLayout } from "../common/layouts/dashboardLayout";
 import { AboutMe } from "../app/about/aboutMe";
 import { TodoLayout } from "../features/todo/pages/TodoLayout";
 import { TodoWelcome } from "../features/todo/pages/TodoWelcome";
-import { TodoListPage } from "../features/todo/pages/TodoListPage";
+import { TodoList } from "../app/todoList/todoList";
 
-export const router = createBrowserRouter([
+
+export const router = createHashRouter([
   {
     path: "/",
     Component: DashboardLayout,
@@ -29,15 +30,15 @@ export const router = createBrowserRouter([
           },
           {
             path: "todo",
-            Component:TodoListPage
+            Component:TodoList
           },
           {
             path: "completed",
-            Component:TodoListPage
+            Component:TodoList
           },
           {
             path: "priority",
-            Component:TodoListPage
+            Component:TodoList
           }
         ]
 

@@ -7,7 +7,6 @@ export const TodoListPage = () => {
   const { pathname } = useLocation();
   const route = pathname.split("/").filter(Boolean).at(-1);
 
-
   const context = useOutletContext();
   const {
     todos,
@@ -15,12 +14,13 @@ export const TodoListPage = () => {
     toggleComplete,
     togglePriority,
     deleteTodo
-  } = context;
+  } = context;  
 
   let todosToShow = [];
   let title = "TODO";
 
   if (route === "completed") {
+                              // <<<>>>//
     todosToShow = todos.filter(t => t.completed);
     title = "COMPLETED";
   } 

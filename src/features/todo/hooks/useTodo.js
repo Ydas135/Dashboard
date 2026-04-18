@@ -34,7 +34,6 @@ export const useTodo = () => {
         setTodos(prev => prev.filter(t => t.id !== id))
     }
 
-        console.log("TODOS:", todos);
     return{
         todos,
         addTodo,
@@ -42,5 +41,4 @@ export const useTodo = () => {
         togglePriority,
         deleteTodo
     }
-    
 }

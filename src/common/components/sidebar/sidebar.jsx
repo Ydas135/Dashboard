@@ -1,8 +1,22 @@
 import { Link } from "react-router"
+import { useUser } from "../../../context/UserContext"
 
 export default function Sidebar() {
+  const user = useUser();
   return (
     <aside className='lg:w-80 bg-slate-950/80 backdrop-blur-xl border-white/10 border-b lg:border-r lg:border-b-0'>
+      <div className="flex items-center gap-2 justify-start px-5 py-6 lg:px-6">
+        <img
+          src={user.avatar}
+          alt="avatar"
+          className="w-16 h-16 rounded-full"
+        />
+        <div className="flex flex-col">
+        <h2 className="font-semibold">{user.name}</h2>
+        <p className="text-sm text-slate-400">{user.role}</p>
+        </div>
+      </div>
+
         <div className="flex h-full flex-col px-5 py-6 lg:px-6">
           <div className="mt-8">
             <h2 className="px-3 text-xs font-medium uppercase text-slate-500">

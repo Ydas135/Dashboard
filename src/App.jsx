@@ -1,9 +1,12 @@
 import { RouterProvider } from 'react-router'
 import { router } from './router/router'
+import { UserProvider } from './context/UserContext'
 
 export function App() {
   return (
-    <RouterProvider router={router} />
+    <UserProvider>
+      <RouterProvider router={router} />
+    </UserProvider>
   )
 }
 
