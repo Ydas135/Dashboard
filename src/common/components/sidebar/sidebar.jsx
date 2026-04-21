@@ -25,6 +25,7 @@ export default function Sidebar() {
             <nav className="mt-4 space-y-2 gap-4 flex lg:flex-col">
               <Link to="/">Home</Link>
               <Link to="/about">About Me</Link>
+              <Link to="/pokemon">Pokemon</Link>
               
               <div className="flex flex-col gap-2">
                 <Link to="/todo-module" className="font-semibold text-orange-400">
@@ -38,6 +39,9 @@ export default function Sidebar() {
                 </Link>
                 <Link to="/todo-module/priority" className="ml-4 text-sm">
                   Priority
+                </Link>
+                <Link to="/todo-module/rick-and-morty" className="ml-4 text-sm">
+                  RickAndMorty
                 </Link>
               </div>
             </nav>
