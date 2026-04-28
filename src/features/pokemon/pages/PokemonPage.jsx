@@ -1,5 +1,6 @@
 import { useGetPokemons } from "../hooks/useGetPokemons";
 import { useNavigate } from "react-router";
+import { PokemonItem } from "../components/PokemonItem";
 
 export const PokemonPage = () => {
   const { pokemons, loading } = useGetPokemons();

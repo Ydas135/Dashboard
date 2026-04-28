@@ -1,5 +1,6 @@
 import { Link } from "react-router"
 import { useUser } from "../../../context/UserContext"
+import { LogOut } from "lucide-react";
 
 export default function Sidebar() {
   const user = useUser();
@@ -45,6 +46,10 @@ export default function Sidebar() {
                 </Link>
               </div>
             </nav>
+          </div>
+
+          <div className="border border-red-500/50 rounded-lg p-2 text-red-500/50 flex gap-2 justify-center align-bottom">
+            <LogOut /> <p>Logout</p>
           </div>
         </div>
     </aside>
