@@ -7,11 +7,11 @@ export const useAuthStore = create(
             token: null,
 
             setToken: (token) => set({token}),
-            logout: () => set({ token: null})
+            logout: () => set({ token: null }),
         }),
 
         {
-            name: "auth-storage"
+            name: "AuthStorage"
         }
     )
 )

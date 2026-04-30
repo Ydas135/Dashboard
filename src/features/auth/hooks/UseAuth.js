@@ -5,13 +5,14 @@ export const useAuth = () => {
     const { token, setToken, logout} = useAuthStore();
 
     const login = async ({ username, password}) => {
-        const token = await LoginServices({ username, password});
+        const token = await LoginServices({ username, password})
+        setToken(token);
     }
 
     return {
         token, 
         login,
         logout,
-        isAuthenticated: !!token
+        isAuthenticated: !!token,
     }
 }

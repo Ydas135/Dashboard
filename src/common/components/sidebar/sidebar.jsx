@@ -1,12 +1,16 @@
 import { Link } from "react-router"
 import { useUser } from "../../../context/UserContext"
+import { useAuthStore } from "../../../features/auth/store/AuthStore"
 import { LogOut } from "lucide-react";
 
-export default function Sidebar() {
+export function Sidebar() {
+
+  const { logout } = useAuthStore()
+
   const user = useUser();
   return (
-    <aside className='lg:w-80 bg-slate-950/80 backdrop-blur-xl border-white/10 border-b lg:border-r lg:border-b-0'>
-      <div className="flex items-center gap-2 justify-start px-5 py-6 lg:px-6">
+    <aside className=' min-h-screen lg:w-80 bg-slate-950/80 backdrop-blur-xl border-white/10 border-b lg:border-r lg:border-b-0'>
+      <div className="flex items-center gap-2 px-5 py-6 lg:px-6">
         <img
           src={user.avatar}
           alt="avatar"
@@ -41,17 +45,16 @@ export default function Sidebar() {
                 <Link to="/todo-module/priority" className="ml-4 text-sm">
                   Priority
                 </Link>
-                <Link to="/todo-module/rick-and-morty" className="ml-4 text-sm">
-                  RickAndMorty
-                </Link>
               </div>
             </nav>
           </div>
-
-          <div className="border border-red-500/50 rounded-lg p-2 text-red-500/50 flex gap-2 justify-center align-bottom">
-            <LogOut /> <p>Logout</p>
-          </div>
         </div>
+        <button 
+          className="border border-red-500/50 rounded-lg p-2 text-red-500 flex gap-2 justify-center"
+          onClick={logout}  
+        >
+          <LogOut /> <p>Logout</p>
+        </button>
     </aside>
   )
 }

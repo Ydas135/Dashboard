@@ -5,8 +5,6 @@ import { AboutMe } from "../app/about/aboutMe";
 import { TodoLayout } from "../features/todo/pages/TodoLayout";
 import { TodoWelcome } from "../features/todo/pages/TodoWelcome";
 import { TodoList } from "../app/todoList/todoList";
-import { RickAndMorty } from "../app/rickandmorty/RickAndMorty";
-import { Character } from "../app/rickandmorty/Character";
 import { PokemonDetail } from "../app/pokemon/pokemonDetail";
 import { Pokemon } from "../app/pokemon/pokemon"
 import { Login } from "../app/login/Login";
@@ -61,14 +59,6 @@ export const router = createHashRouter([
               {
                 path: "priority",
                 Component:TodoList
-              },
-              {
-                path: "rick-and-morty",
-                Component:RickAndMorty
-              },
-              {
-                path: "rick-and-morty/character/:characterId",
-                Component:Character
               }
             ]
 

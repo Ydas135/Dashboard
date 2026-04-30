@@ -17,10 +17,10 @@ export const LoginPage = () => {
         e.preventDefault();
 
         try {
-            await login( { username: form.username, password: form.password })
+            await login(  { username: form.username, password: form.password })
             navigate("/")
         }   catch{
-            console.error("Credenciales incorrectas");
+            alert("Username or password are incorrects")
         }
     }
 
@@ -29,23 +29,28 @@ export const LoginPage = () => {
         className='min-h-screen flex justify-center items-center'
         onSubmit={handleSubmit}
     >
-        <div>
+        <div className='flex flex-col justify-center items-center gap-6 h-105 p-4 w-fit'>
             <h2>Login</h2>
             <input 
             type="text" 
-            className="w-full focus:outline-white/50 px-4 border border-slate-700 rounded-lg" placeholder='username'
+            className="w-2xs focus:outline-white/50 focus:outline-none px-4 border border-slate-700 rounded-lg" 
+            placeholder='username'
             onChange={(e) => setForm({ ...form, username: e.target.value })}
             />
             <input 
             type="password" 
-            className="w-full focus:outline-white/50 px-4 border border-slate-700 rounded-lg" placeholder='password'
+            className="w-2xs focus:outline-white/50 focus:outline-none px-4 border border-slate-700 rounded-lg" 
+            placeholder='password'
             onChange={(e) => setForm({ ...form, password: e.target.value })}
             />
 
-            <button type="submit">
+            <button 
+                type="submit" 
+                className='px-3 py-2 bg-slate-900 text-white  rounded-lg cursor-pointer'
+            >
                 Submit
             </button>
-        </div>
+        </div> 
     </form>
   )
 }
